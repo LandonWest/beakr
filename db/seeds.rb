@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Course.create(name: 'Web Development', start_date: Time.now, end_date: 3.months.from_now,
+description: "At DevPoint we help beginners who may have struggled in the past to teach
+themselves how to program. Our learning approach incorporates pair programming with
+traditional lectures and a mix of group projects, lean methodologies, hackathons,
+industry guest speakers, and one-on-ones with instructors, TAs, and mentors.")
