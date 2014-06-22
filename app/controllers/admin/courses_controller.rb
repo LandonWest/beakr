@@ -1,4 +1,4 @@
-class CoursesController < ApplicationController
+class Admin::CoursesController < AdminController
   before_action :authenticate_user!
   before_action :find_course, only: [:show, :edit, :update, :destroy]
 
@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     if @course.save
       flash[:notice] = 'Course created successfuly!'
-      redirect_to course_path(@course.id)
+      redirect_to admin_course_path(@course.id)
     else
       flash[:notice] = 'Course creation failed'
       render :new
@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update_attributes(course_params)
-      redirect_to course_path(@course.id)
+      redirect_to admin_course_path(@course.id)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_path
+    redirect_to admin_courses_path
   end
 
   private

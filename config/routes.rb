@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   
   root 'static#index'
 
-
-  resources :courses
+  namespace :admin do
+    get '/' => 'base#index'
+    resources :courses
+  end
 
 end
 

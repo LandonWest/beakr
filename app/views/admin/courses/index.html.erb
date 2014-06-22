@@ -1,0 +1,14 @@
+<h1>All Courses</h1>
+
+<p><%= link_to 'Create Course', new_admin_course_path %></p>
+
+<% @courses.each do |course| %>
+
+  <p><%= course.name %>
+  <%= link_to 'Show', admin_course_path(course.id) %>
+  <%= link_to 'Edit', edit_admin_course_path(course.id) %>
+  <%= link_to 'Delete', admin_course_path(course.id), method: :delete, data: {
+    confirm: 'Are you sure?' } %></p>
+
+
+<% end %>
