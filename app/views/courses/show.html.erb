@@ -1,9 +1,15 @@
 <h1><%= @course.name %></h1>
 
+<h3>Description</h3>
+<p><%= @course.description %></p>
+
 <ul>
-  <li>Start Date: <%= @course.start_date.strftime('%b %d, %Y') %></li>
-  <li>End Date: <%= @course.end_date.strftime('%b %d, %Y') %></li>
-  <li>Description: <%= @course.description %></li>
+  <li>
+    <strong>Start Date: </strong><%= @course.start_date.strftime('%b %d, %Y') %>
+  </li>
+  <li>
+    <strong>End Date: </strong><%= @course.end_date.strftime('%b %d, %Y') %>
+  </li>
 </ul>
 
 <%= link_to 'Back', courses_path %>
