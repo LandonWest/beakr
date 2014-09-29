@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  
+
   root 'static#index'
+  resources :courses, :only => [:index, :show]
 
   namespace :admin do
     get '/' => 'base#index'
