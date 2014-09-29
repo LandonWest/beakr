@@ -29,6 +29,7 @@ class Admin::CoursesController < AdminController
 
   def update
     if @course.update_attributes(course_params)
+      flash[:notice] = 'Course updated successfuly!'
       redirect_to admin_course_path(@course.id)
     else
       render :edit
@@ -37,6 +38,7 @@ class Admin::CoursesController < AdminController
 
   def destroy
     @course.destroy
+    flash[:notice] = 'Course deleted successfuly!'
     redirect_to admin_courses_path
   end
 
